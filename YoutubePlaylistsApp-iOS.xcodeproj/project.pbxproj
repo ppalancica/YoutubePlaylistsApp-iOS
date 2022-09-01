@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC2B28C14FB500019B06 /* AppDelegate.swift */; };
-		B332EC2E28C14FB500019B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC2D28C14FB500019B06 /* SceneDelegate.swift */; };
-		B332EC3028C14FB500019B06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC2F28C14FB500019B06 /* ViewController.swift */; };
-		B332EC3328C14FB500019B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B332EC3128C14FB500019B06 /* Main.storyboard */; };
+		B332EC3028C14FB500019B06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC2F28C14FB500019B06 /* MainViewController.swift */; };
 		B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B332EC3428C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld */; };
 		B332EC3828C14FB700019B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B332EC3728C14FB700019B06 /* Assets.xcassets */; };
 		B332EC3B28C14FB700019B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B332EC3928C14FB700019B06 /* LaunchScreen.storyboard */; };
@@ -39,9 +37,7 @@
 /* Begin PBXFileReference section */
 		B332EC2828C14FB500019B06 /* YoutubePlaylistsApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YoutubePlaylistsApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B332EC2B28C14FB500019B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B332EC2D28C14FB500019B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B332EC2F28C14FB500019B06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B332EC3228C14FB500019B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B332EC2F28C14FB500019B06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B332EC3528C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoutubePlaylistsApp_iOS.xcdatamodel; sourceTree = "<group>"; };
 		B332EC3728C14FB700019B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B332EC3A28C14FB700019B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,9 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				B332EC2B28C14FB500019B06 /* AppDelegate.swift */,
-				B332EC2D28C14FB500019B06 /* SceneDelegate.swift */,
-				B332EC2F28C14FB500019B06 /* ViewController.swift */,
-				B332EC3128C14FB500019B06 /* Main.storyboard */,
+				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
 				B332EC3728C14FB700019B06 /* Assets.xcassets */,
 				B332EC3928C14FB700019B06 /* LaunchScreen.storyboard */,
 				B332EC3C28C14FB700019B06 /* Info.plist */,
@@ -236,7 +230,6 @@
 			files = (
 				B332EC3B28C14FB700019B06 /* LaunchScreen.storyboard in Resources */,
 				B332EC3828C14FB700019B06 /* Assets.xcassets in Resources */,
-				B332EC3328C14FB500019B06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B332EC3028C14FB500019B06 /* ViewController.swift in Sources */,
+				B332EC3028C14FB500019B06 /* MainViewController.swift in Sources */,
 				B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */,
 				B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */,
-				B332EC2E28C14FB500019B06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B332EC3128C14FB500019B06 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B332EC3228C14FB500019B06 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B332EC3928C14FB700019B06 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,7 +429,6 @@
 				INFOPLIST_FILE = "YoutubePlaylistsApp-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +455,6 @@
 				INFOPLIST_FILE = "YoutubePlaylistsApp-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
