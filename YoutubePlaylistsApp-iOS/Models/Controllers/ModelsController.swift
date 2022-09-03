@@ -21,6 +21,11 @@ class ModelsController {
         self.modelsRepository = localModelsRepository
     }
     
+    func removeCachedDataIfNeeded() {
+        playlistCategories = []
+        playlists = []
+    }
+    
     func getPlaylistCategories(completion: @escaping ([PlaylistCategory]) -> ()) {
         // self.modelsRepository.getPlaylistCategories(completion: completion)
         
@@ -28,6 +33,7 @@ class ModelsController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.modelsRepository.getPlaylistCategories { playlistCategories in
                 self.playlistCategories = playlistCategories
+                self.playlists = [] // To avoid keeping it populated with previously selected Category's Playlists
                 completion(playlistCategories)
             }
         }

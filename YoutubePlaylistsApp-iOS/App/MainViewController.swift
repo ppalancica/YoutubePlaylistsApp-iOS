@@ -9,18 +9,20 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var modelsController: ModelsController? {
-        didSet {
-            loadPlaylistCategories()
-        }
-    }
-
+    var modelsController: ModelsController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         title = "Main"
         view.backgroundColor = .red
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        modelsController?.removeCachedDataIfNeeded()
+        loadPlaylistCategories()
     }
     
     func loadPlaylistCategories() {
