@@ -24,8 +24,25 @@ class MainViewController: UIViewController {
     }
     
     func loadPlaylistCategories() {
+        print("Loading...")
         modelsController?.getPlaylistCategories { categories in
             print("categories = \(categories)")
+            self.finishedLoadingPlaylistCategories()
         }
+    }
+    
+    func finishedLoadingPlaylistCategories() {
+        print("Finished Loading...")
+        navigateToPlaylistCategoryVC()
+    }
+    
+    func navigateToPlaylistCategoryVC() { // playlistCategories: [PlaylistCategory]) {
+        guard let nc = navigationController else {
+            print("MainViewController must be embedded inside a UINavigationController")
+            return
+        }
+        let vc = PlaylistCategoryViewController()
+        vc.modelsController = modelsController
+        nc.pushViewController(vc, animated: true)
     }
 }

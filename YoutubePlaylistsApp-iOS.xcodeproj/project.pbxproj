@@ -21,6 +21,7 @@
 		B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */; };
 		B38443DC28C2BE9D00536CBB /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DB28C2BE9D00536CBB /* ModelsController.swift */; };
 		B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DD28C2C2F600536CBB /* ModelsRepository.swift */; };
+		B38443E528C371FE00536CBB /* PlaylistCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategory.swift; sourceTree = "<group>"; };
 		B38443DB28C2BE9D00536CBB /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
 		B38443DD28C2C2F600536CBB /* ModelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsRepository.swift; sourceTree = "<group>"; };
+		B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +111,9 @@
 		B332EC2A28C14FB500019B06 /* YoutubePlaylistsApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B38443E328C371CE00536CBB /* App */,
+				B38443DF28C3711B00536CBB /* Views */,
 				B38443D428C2BD1E00536CBB /* Models */,
-				B332EC2B28C14FB500019B06 /* AppDelegate.swift */,
-				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
 				B332EC3728C14FB700019B06 /* Assets.xcassets */,
 				B332EC3928C14FB700019B06 /* LaunchScreen.storyboard */,
 				B332EC3C28C14FB700019B06 /* Info.plist */,
@@ -140,14 +142,55 @@
 		B38443D428C2BD1E00536CBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B38443E128C3717A00536CBB /* Controllers */,
+				B38443E028C3715A00536CBB /* DataStructures */,
+				B38443E228C3719C00536CBB /* Repositories */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B38443DF28C3711B00536CBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B38443E028C3715A00536CBB /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
 				B38443D528C2BD3F00536CBB /* Playlist.swift */,
 				B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */,
 				B38443D228C2BD0B00536CBB /* playlists.json */,
 				B38443D728C2BDA300536CBB /* Video.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		B38443E128C3717A00536CBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				B38443DB28C2BE9D00536CBB /* ModelsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B38443E228C3719C00536CBB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
 				B38443DD28C2C2F600536CBB /* ModelsRepository.swift */,
 			);
-			path = Models;
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B38443E328C371CE00536CBB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
+				B332EC2B28C14FB500019B06 /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B332EC3028C14FB500019B06 /* MainViewController.swift in Sources */,
+				B38443E528C371FE00536CBB /* PlaylistCategoryViewController.swift in Sources */,
 				B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */,
 				B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */,
 				B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */,
