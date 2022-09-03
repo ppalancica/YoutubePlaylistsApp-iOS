@@ -1,0 +1,79 @@
+{
+    "version": "1.0",
+    "author": "Pavel Palancica",
+    "website": "mobiledeveloper.io",
+    
+    "playlistCategories": [
+
+        {
+            "playlist_category_id": "001",
+            "name": "Success",
+            
+            "playlists": [
+                
+                {
+                    "playlist_id": "PLykIL_1_MFWkWDDgvdZ6L7rsvKCKl-39j",
+                    "name": "Principles for Success",
+                    
+                    "videos": [
+                        {
+                            "video_id": "dKz095P7LdU",
+                            "name": "\"The Call to Adventure\" | Episode 1",
+                            "url": "https://www.youtube.com/watch?v=dKz095P7LdU"
+                        },
+                        
+                        {
+                            "video_id": "Tfrrubw7pcE",
+                            "name": "\"Embrace Reality and Deal With It\" | Episode 2",
+                            "url": "https://www.youtube.com/watch?v=Tfrrubw7pcE"
+                        },
+                        
+                        {
+                            "video_id": "ryD8lfSEGio",
+                            "name": "\"The Five Step Process\" | Episode 3",
+                            "url": "https://www.youtube.com/watch?v=ryD8lfSEGio"
+                        },
+                        
+                        {
+                            "video_id": "jNYN_QcpAUU",
+                            "name": "\"The Abyss\" | Episode 4",
+                            "url": "https://www.youtube.com/watch?v=jNYN_QcpAUU"
+                        },
+                        
+                        {
+                            "video_id": "Um4jnbZakbA",
+                            "name": "\"Everything is a Machine\" | Episode 5",
+                            "url": "https://www.youtube.com/watch?v=Um4jnbZakbA"
+                        },
+                        
+                        {
+                            "video_id": "CDmLI4zlBH0",
+                            "name": "\"Your Two Biggest Barriers\" | Episode 6",
+                            "url": "https://www.youtube.com/watch?v=CDmLI4zlBH0"
+                        },
+                                                
+                        {
+                            "video_id": "J2Qrm9UB7qY",
+                            "name": "\"Be Radically Open-Minded\" | Episode 7",
+                            "url": "https://www.youtube.com/watch?v=J2Qrm9UB7qY"
+                        },
+                        
+                        {
+                            "video_id": "nYY-1KxXnSg",
+                            "name": "\"Struggle Well\" | Episode 8",
+                            "url": "https://www.youtube.com/watch?v=nYY-1KxXnSg"
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        {
+            "playlist_category_id": "002",
+            "name": "Documentaries",
+            
+            "playlists": []
+        },
+
+    ]
+}

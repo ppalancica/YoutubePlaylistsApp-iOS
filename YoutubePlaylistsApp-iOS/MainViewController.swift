@@ -8,6 +8,12 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var modelsController: ModelsController? {
+        didSet {
+            loadPlaylistCategories()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,4 +23,9 @@ class MainViewController: UIViewController {
         view.backgroundColor = .red
     }
     
+    func loadPlaylistCategories() {
+        modelsController?.getPlaylistCategories { categories in
+            print("categories = \(categories)")
+        }
+    }
 }

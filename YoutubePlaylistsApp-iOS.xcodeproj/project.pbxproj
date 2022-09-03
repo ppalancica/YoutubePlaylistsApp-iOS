@@ -15,6 +15,12 @@
 		B332EC4628C14FB700019B06 /* YoutubePlaylistsApp_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC4528C14FB700019B06 /* YoutubePlaylistsApp_iOSTests.swift */; };
 		B332EC5028C14FB700019B06 /* YoutubePlaylistsApp_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC4F28C14FB700019B06 /* YoutubePlaylistsApp_iOSUITests.swift */; };
 		B332EC5228C14FB700019B06 /* YoutubePlaylistsApp_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332EC5128C14FB700019B06 /* YoutubePlaylistsApp_iOSUITestsLaunchTests.swift */; };
+		B38443D328C2BD0B00536CBB /* playlists.json in Resources */ = {isa = PBXBuildFile; fileRef = B38443D228C2BD0B00536CBB /* playlists.json */; };
+		B38443D628C2BD3F00536CBB /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443D528C2BD3F00536CBB /* Playlist.swift */; };
+		B38443D828C2BDA300536CBB /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443D728C2BDA300536CBB /* Video.swift */; };
+		B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */; };
+		B38443DC28C2BE9D00536CBB /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DB28C2BE9D00536CBB /* ModelsController.swift */; };
+		B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DD28C2C2F600536CBB /* ModelsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		B332EC4B28C14FB700019B06 /* YoutubePlaylistsApp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YoutubePlaylistsApp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B332EC4F28C14FB700019B06 /* YoutubePlaylistsApp_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistsApp_iOSUITests.swift; sourceTree = "<group>"; };
 		B332EC5128C14FB700019B06 /* YoutubePlaylistsApp_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlaylistsApp_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B38443D228C2BD0B00536CBB /* playlists.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = playlists.json; sourceTree = "<group>"; };
+		B38443D528C2BD3F00536CBB /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		B38443D728C2BDA300536CBB /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategory.swift; sourceTree = "<group>"; };
+		B38443DB28C2BE9D00536CBB /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
+		B38443DD28C2C2F600536CBB /* ModelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 		B332EC2A28C14FB500019B06 /* YoutubePlaylistsApp-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B38443D428C2BD1E00536CBB /* Models */,
 				B332EC2B28C14FB500019B06 /* AppDelegate.swift */,
 				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
 				B332EC3728C14FB700019B06 /* Assets.xcassets */,
@@ -122,6 +135,19 @@
 				B332EC5128C14FB700019B06 /* YoutubePlaylistsApp_iOSUITestsLaunchTests.swift */,
 			);
 			path = "YoutubePlaylistsApp-iOSUITests";
+			sourceTree = "<group>";
+		};
+		B38443D428C2BD1E00536CBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B38443D528C2BD3F00536CBB /* Playlist.swift */,
+				B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */,
+				B38443D228C2BD0B00536CBB /* playlists.json */,
+				B38443D728C2BDA300536CBB /* Video.swift */,
+				B38443DB28C2BE9D00536CBB /* ModelsController.swift */,
+				B38443DD28C2C2F600536CBB /* ModelsRepository.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +256,7 @@
 			files = (
 				B332EC3B28C14FB700019B06 /* LaunchScreen.storyboard in Resources */,
 				B332EC3828C14FB700019B06 /* Assets.xcassets in Resources */,
+				B38443D328C2BD0B00536CBB /* playlists.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +282,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B332EC3028C14FB500019B06 /* MainViewController.swift in Sources */,
+				B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */,
 				B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */,
 				B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */,
+				B38443D628C2BD3F00536CBB /* Playlist.swift in Sources */,
+				B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */,
+				B38443DC28C2BE9D00536CBB /* ModelsController.swift in Sources */,
+				B38443D828C2BDA300536CBB /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
