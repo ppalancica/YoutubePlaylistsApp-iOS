@@ -14,6 +14,7 @@ typealias JsonArray = [[String: Any]]
 protocol ModelsRepositoryType {
 
     func getPlaylistCategories(completion: @escaping ([PlaylistCategory]) -> ())
+    func getPlaylistsFor(categoryId: String, completion: @escaping ([Playlist]) -> ())
 }
 
 
@@ -69,4 +70,35 @@ class LocalModelsRepository: ModelsRepositoryType {
         completion(categories)
     }
     
+    func getPlaylistsFor(categoryId: String, completion: @escaping ([Playlist]) -> ()) {
+        guard let playlistCategories = jsonDictionary["playlistCategories"] as? JsonArray else {
+            completion([])
+            return
+        }
+                
+        var categoryPlaylistsJson: JsonArray?
+        for category in playlistCategories {
+            if (category["playlist_category_id"] as? String ?? "") == categoryId {
+                categoryPlaylistsJson = category["playlists"] as? JsonArray
+            }
+        }
+        
+        guard let playlistsJson = categoryPlaylistsJson else { return }
+        
+        var playlists: [Playlist] = []
+        for item in playlistsJson {
+            let playlistId = item["playlist_id"] as? String ?? ""
+            let playlistName = item["name"] as? String ?? ""
+            playlists.append(Playlist(id: playlistId, name: playlistName))
+        }
+        completion(playlists)
+    }
+    
+}
+
+private extension LocalModelsRepository {
+    func jsonDictionaryFor(categoryId: String) -> JsonDictionary? {
+        
+        return nil
+    }
 }

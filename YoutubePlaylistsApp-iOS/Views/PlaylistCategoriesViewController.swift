@@ -33,6 +33,7 @@ class PlaylistCategoriesViewController: UIViewController {
     }
     
     func setupUI() {
+        title = "Playlist Categories"
         view.backgroundColor = .lightGray
         view.addSubview(categoriesTableView)
     }
@@ -71,5 +72,31 @@ extension PlaylistCategoriesViewController: UITableViewDataSource {
 extension PlaylistCategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let category = modelsController?.categoryAt(index: indexPath.row) else {
+            print("Could not retrieve category at \(indexPath.row)")
+            return
+        }
+        loadPlaylistsFor(categoryId: category.id)
+    }
+}
+
+extension PlaylistCategoriesViewController {
+    func loadPlaylistsFor(categoryId: String) {
+        print("Loading...")
+        modelsController?.getPlaylistsFor(categoryId: categoryId) { playlists in
+            print("playlists for categoryId \(categoryId): \(playlists)")
+            self.finishedLoadingPlaylistCategories(categoryId: categoryId)
+        }
+    }
+    
+    func finishedLoadingPlaylistCategories(categoryId: String) {
+        guard let nc = navigationController else {
+            print("PlaylistCategoriesViewController must be embedded inside a UINavigationController")
+            return
+        }
+        let vc = PlaylistsViewController()
+        vc.modelsController = modelsController
+        vc.categoryId = categoryId
+        nc.pushViewController(vc, animated: true)
     }
 }
