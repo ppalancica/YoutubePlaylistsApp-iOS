@@ -14,6 +14,7 @@ class ModelsController {
     // To keep results cached, and avoid loading from json each time
     private var playlistCategories: [PlaylistCategory] = []
     private var playlists: [Playlist] = [] // Playlists for selected PlaylistCategory
+    private var videos: [Video] = [] // Videos for selected Playlist
     
     init?() {
         guard let localModelsRepository = LocalModelsRepository() else { return nil }
@@ -39,7 +40,7 @@ class ModelsController {
         }
     }
     
-    func numberOfplaylistCategories() -> Int {
+    func numberOfPlaylistCategories() -> Int {
         return playlistCategories.count
     }
     
@@ -58,6 +59,7 @@ class ModelsController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.modelsRepository.getPlaylistsFor(categoryId: categoryId) { playlists in
                 self.playlists = playlists
+                self.videos = []
                 completion(playlists)
             }
         }
@@ -74,4 +76,29 @@ class ModelsController {
         }
         return playlists[index]
     }
+        
+    func getVideosFor(categoryId: String, playlistId: String, completion: @escaping ([Video]) -> ()) {
+        // modelsRepository.getVideosFor(playlistId: playlistId, completion: completion)
+        
+        // Simulate a longer delay since data is coming from local json
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.modelsRepository.getVideosFor(categoryId: categoryId, playlistId: playlistId) { videos in
+                self.videos = videos
+                completion(videos)
+            }
+        }
+    }
+    
+    func numberOfVideosForSelectedPlaylist() -> Int {
+        return videos.count
+    }
+    
+    func videoForSelectedPlaylistAt(index: Int) -> Video? {
+        guard index > -1 && index < videos.count else {
+            print("Video index outside of bounds")
+            return nil
+        }
+        return videos[index]
+    }
+
 }

@@ -73,5 +73,35 @@ extension PlaylistsViewController: UITableViewDataSource {
 extension PlaylistsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let playlist = modelsController?.playlistForSelectedCategoryAt(index: indexPath.row) else {
+            print("Could not retrieve playlist at \(indexPath.row)")
+            return
+        }
+        guard let categoryId = categoryId else {
+            print("categoryId must have a value")
+            return
+        }
+        loadVideosFor(categoryId: categoryId, playlistId: playlist.id)
+    }
+}
+
+extension PlaylistsViewController {
+    func loadVideosFor(categoryId: String, playlistId: String) {
+        print("Loading...")
+        modelsController?.getVideosFor(categoryId: categoryId, playlistId: playlistId) { videos in
+            print("videos for playlistId \(playlistId): \(videos)")
+            self.finishedLoadingVideos(categoryId: categoryId, playlistId: playlistId)
+        }
+    }
+    
+    func finishedLoadingVideos(categoryId: String, playlistId: String) {
+        guard let nc = navigationController else {
+            print("PlaylistsViewController must be embedded inside a UINavigationController")
+            return
+        }
+        let vc = PlaylistVideosViewController()
+        vc.modelsController = modelsController
+        vc.playlistId = playlistId
+        nc.pushViewController(vc, animated: true)
     }
 }

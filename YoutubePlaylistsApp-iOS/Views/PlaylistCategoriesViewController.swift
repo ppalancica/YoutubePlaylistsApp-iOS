@@ -55,7 +55,7 @@ extension PlaylistCategoriesViewController: UITableViewDataSource {
         guard let modelsController = modelsController else {
             return 0
         }
-        return modelsController.numberOfplaylistCategories()
+        return modelsController.numberOfPlaylistCategories()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

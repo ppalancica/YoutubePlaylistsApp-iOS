@@ -23,6 +23,7 @@
 		B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DD28C2C2F600536CBB /* ModelsRepository.swift */; };
 		B38443E528C371FE00536CBB /* PlaylistCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */; };
 		B38443E728C3C0D900536CBB /* PlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E628C3C0D800536CBB /* PlaylistsViewController.swift */; };
+		B38443E928C409FE00536CBB /* PlaylistVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E828C409FE00536CBB /* PlaylistVideosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B38443DD28C2C2F600536CBB /* ModelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsRepository.swift; sourceTree = "<group>"; };
 		B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategoriesViewController.swift; sourceTree = "<group>"; };
 		B38443E628C3C0D800536CBB /* PlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsViewController.swift; sourceTree = "<group>"; };
+		B38443E828C409FE00536CBB /* PlaylistVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVideosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */,
 				B38443E628C3C0D800536CBB /* PlaylistsViewController.swift */,
+				B38443E828C409FE00536CBB /* PlaylistVideosViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */,
 				B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */,
 				B38443D628C2BD3F00536CBB /* Playlist.swift in Sources */,
+				B38443E928C409FE00536CBB /* PlaylistVideosViewController.swift in Sources */,
 				B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */,
 				B38443DC28C2BE9D00536CBB /* ModelsController.swift in Sources */,
 				B38443D828C2BDA300536CBB /* Video.swift in Sources */,
