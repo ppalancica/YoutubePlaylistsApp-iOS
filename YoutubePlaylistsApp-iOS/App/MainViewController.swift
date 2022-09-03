@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
             print("MainViewController must be embedded inside a UINavigationController")
             return
         }
-        let vc = PlaylistCategoryViewController()
+        let vc = PlaylistCategoriesViewController()
         vc.modelsController = modelsController
         nc.pushViewController(vc, animated: true)
     }

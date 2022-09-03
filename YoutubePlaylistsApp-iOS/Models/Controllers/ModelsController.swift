@@ -11,7 +11,7 @@ class ModelsController {
     
     var modelsRepository: ModelsRepositoryType
     
-    var playlistCategories: [PlaylistCategory]?
+    private var playlistCategories: [PlaylistCategory] = [] // To keep results cached, and avoid loading from json each time
     
     init?() {
         guard let localModelsRepository = LocalModelsRepository() else { return nil }
@@ -25,9 +25,21 @@ class ModelsController {
         // Simulate a longer delay since data is coming from local json
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.modelsRepository.getPlaylistCategories { playlistCategories in
-                self.playlistCategories = playlistCategories // Keep results cached, to avoid loading from json each time
+                self.playlistCategories = playlistCategories
                 completion(playlistCategories)
             }
         }
+    }
+    
+    func numberOfplaylistCategories() -> Int {
+        return playlistCategories.count
+    }
+    
+    func categoryAt(index: Int) -> PlaylistCategory? {
+        guard index > -1 && index < playlistCategories.count else {
+            print("PlaylistCategory index outside of bounds")
+            return nil
+        }
+        return playlistCategories[index]
     }
 }

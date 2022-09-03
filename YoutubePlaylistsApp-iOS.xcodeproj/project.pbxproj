@@ -21,7 +21,7 @@
 		B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */; };
 		B38443DC28C2BE9D00536CBB /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DB28C2BE9D00536CBB /* ModelsController.swift */; };
 		B38443DE28C2C2F600536CBB /* ModelsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443DD28C2C2F600536CBB /* ModelsRepository.swift */; };
-		B38443E528C371FE00536CBB /* PlaylistCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */; };
+		B38443E528C371FE00536CBB /* PlaylistCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,7 @@
 		B38443D928C2BDFB00536CBB /* PlaylistCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategory.swift; sourceTree = "<group>"; };
 		B38443DB28C2BE9D00536CBB /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
 		B38443DD28C2C2F600536CBB /* ModelsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsRepository.swift; sourceTree = "<group>"; };
-		B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategoryViewController.swift; sourceTree = "<group>"; };
+		B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCategoriesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 		B38443DF28C3711B00536CBB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B38443E428C371FE00536CBB /* PlaylistCategoryViewController.swift */,
+				B38443E428C371FE00536CBB /* PlaylistCategoriesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,8 +187,8 @@
 		B38443E328C371CE00536CBB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
 				B332EC2B28C14FB500019B06 /* AppDelegate.swift */,
+				B332EC2F28C14FB500019B06 /* MainViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B332EC3028C14FB500019B06 /* MainViewController.swift in Sources */,
-				B38443E528C371FE00536CBB /* PlaylistCategoryViewController.swift in Sources */,
+				B38443E528C371FE00536CBB /* PlaylistCategoriesViewController.swift in Sources */,
 				B38443DA28C2BDFB00536CBB /* PlaylistCategory.swift in Sources */,
 				B332EC3628C14FB500019B06 /* YoutubePlaylistsApp_iOS.xcdatamodeld in Sources */,
 				B332EC2C28C14FB500019B06 /* AppDelegate.swift in Sources */,
