@@ -23,8 +23,10 @@ class MainViewController: UIViewController {
         super.viewDidAppear(animated)
         modelsController?.removeCachedDataIfNeeded()
         loadPlaylistCategories()
-    }
-    
+    }   
+}
+
+extension MainViewController {
     func loadPlaylistCategories() {
         print("Loading...")
         modelsController?.getPlaylistCategories { categories in

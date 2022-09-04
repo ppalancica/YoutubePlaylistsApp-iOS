@@ -8,6 +8,8 @@
 import UIKit
 
 class PlaylistCategoriesViewController: UIViewController {
+    
+    static let playlistCategoryCellIdentifier = "PlaylistCategoryCell"
 
     var modelsController: ModelsController?
     lazy var categoriesTableView = createPlaylistCategoriesTableView()
@@ -24,7 +26,7 @@ class PlaylistCategoriesViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(
             UITableViewCell.self,
-            forCellReuseIdentifier: "PlaylistCategoryCell"
+            forCellReuseIdentifier: PlaylistCategoriesViewController.playlistCategoryCellIdentifier
         )
         tableView.dataSource = self
         tableView.delegate = self
@@ -63,7 +65,10 @@ extension PlaylistCategoriesViewController: UITableViewDataSource {
             print("Could not retrieve category at \(indexPath.row)")
             return UITableViewCell()
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistCategoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PlaylistCategoriesViewController.playlistCategoryCellIdentifier,
+            for: indexPath
+        )
         cell.textLabel?.text = category.name
         return cell
     }
@@ -90,6 +95,7 @@ extension PlaylistCategoriesViewController {
     }
     
     func finishedLoadingPlaylistCategories(categoryId: String) {
+        print("Finished Loading...")
         guard let nc = navigationController else {
             print("PlaylistCategoriesViewController must be embedded inside a UINavigationController")
             return

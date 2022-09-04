@@ -9,8 +9,9 @@ import UIKit
 
 class PlaylistVideosViewController: UIViewController {
 
+    static let videoCellIdentifier = "VideoCell"
+    
     var modelsController: ModelsController?
-    var playlistId: String?
     lazy var videosTableView = createVideosTableView()
     
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class PlaylistVideosViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(
             UITableViewCell.self,
-            forCellReuseIdentifier: "VideoCell"
+            forCellReuseIdentifier: PlaylistVideosViewController.videoCellIdentifier
         )
         tableView.dataSource = self
         tableView.delegate = self
@@ -60,7 +61,10 @@ extension PlaylistVideosViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PlaylistVideosViewController.videoCellIdentifier,
+            for: indexPath
+        )
         guard let video = modelsController?.videoForSelectedPlaylistAt(index: indexPath.row) else {
             print("Could not retrieve vidoe for selected playlist at \(indexPath.row)")
             return UITableViewCell()

@@ -8,6 +8,8 @@
 import UIKit
 
 class PlaylistsViewController: UIViewController {
+    
+    static let playlistCellIdentifier = "PlaylistCell"
 
     var modelsController: ModelsController?
     var categoryId: String?
@@ -25,7 +27,7 @@ class PlaylistsViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.register(
             UITableViewCell.self,
-            forCellReuseIdentifier: "PlaylistsCell"
+            forCellReuseIdentifier: PlaylistsViewController.playlistCellIdentifier
         )
         tableView.dataSource = self
         tableView.delegate = self
@@ -60,7 +62,10 @@ extension PlaylistsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlaylistsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: PlaylistsViewController.playlistCellIdentifier,
+            for: indexPath
+        )
         guard let playlist = modelsController?.playlistForSelectedCategoryAt(index: indexPath.row) else {
             print("Could not retrieve playlist for selected category at \(indexPath.row)")
             return UITableViewCell()
@@ -90,18 +95,18 @@ extension PlaylistsViewController {
         print("Loading...")
         modelsController?.getVideosFor(categoryId: categoryId, playlistId: playlistId) { videos in
             print("videos for playlistId \(playlistId): \(videos)")
-            self.finishedLoadingVideos(categoryId: categoryId, playlistId: playlistId)
+            self.finishedLoadingVideos(categoryId: categoryId)
         }
     }
     
-    func finishedLoadingVideos(categoryId: String, playlistId: String) {
+    func finishedLoadingVideos(categoryId: String) {
+        print("Finished Loading...")
         guard let nc = navigationController else {
             print("PlaylistsViewController must be embedded inside a UINavigationController")
             return
         }
         let vc = PlaylistVideosViewController()
         vc.modelsController = modelsController
-        vc.playlistId = playlistId
         nc.pushViewController(vc, animated: true)
     }
 }
